@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — Blessing Church</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-card">
+    <h2>✝ Welcome Back</h2>
+    <p class="subtitle">Login to your account</p>
+    <form id="loginForm">
+      <div class="form-group">
+        <label for="loginEmail">Email</label>
+        <input type="email" id="loginEmail" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="loginPassword">Password</label>
+        <input type="password" id="loginPassword" placeholder="Your password" required>
+      </div>
+      <div class="forgot"><a href="#">Forgot password?</a></div>
+      <button type="submit" class="btn btn-primary">Login</button>
+      <div class="form-status" id="loginStatus"></div>
+    </form>
+    <p class="auth-link">Don't have an account? <a href="/register">Register</a></p>
+    <p class="auth-link" style="margin-top:12px"><a href="/">← Back to Home</a></p>
+  </div>
+</div>
+<script>
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const status = document.getElementById('loginStatus');
+  try {
+    const res = await fetch('/api/auth/login', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email: document.getElementById('loginEmail').value, password: document.getElementById('loginPassword').value })
+    });
+    const json = await res.json();
+    if (json.success) {
+      localStorage.setItem('token', json.token);
+      localStorage.setItem('user', JSON.stringify(json.user));
+      status.className = 'form-status success'; status.textContent = '✅ Login successful!';
+      setTimeout(() => window.location.href = '/', 1000);
+    } else { status.className = 'form-status error'; status.textContent = '❌ ' + json.error; }
+  } catch { status.className = 'form-status error'; status.textContent = '❌ Connection error.'; }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Blessing of God International Church</title>
+  <meta name="description" content="The Blessing of God International Church - God's blessing makes you prosper.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝️</text></svg>">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#" class="nav-logo">
+      <img src="images/logo.jpg" alt="Blessing Church Logo">
+      <span>Blessing Church</span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" id="navAbout">About</a></li>
+      <li><a href="#programs" id="navPrograms">Programs</a></li>
+      <li><a href="#gallery" id="navGallery">Gallery</a></li>
+      <li><a href="#blessing-tv" id="navTV">Blessing TV</a></li>
+      <li><a href="#contact" id="navContact">Contact</a></li>
+      <li><a href="#donate" class="btn-nav" id="navGive">Give</a></li>
+      <li><button onclick="toggleLanguage()" class="btn-nav" style="background:transparent; border:1px solid var(--gold); color:var(--gold);" id="langToggle">🇪🇹 አማርኛ</button></li>
+    </ul>
+    <button class="hamburger" id="hamburgerBtn" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="close-btn" id="closeNav">&times;</button>
+  <button onclick="toggleLanguage(); closeMobileNav();" style="background:transparent; border:1px solid var(--gold); color:var(--gold); padding:8px 16px; border-radius:8px; margin-bottom:10px; font-size:1.1rem;">🇪🇹 አማርኛ / English</button>
+  <a href="#about" onclick="closeMobileNav()" id="mNavAbout">About</a>
+  <a href="#programs" onclick="closeMobileNav()" id="mNavPrograms">Programs</a>
+  <a href="#gallery" onclick="closeMobileNav()" id="mNavGallery">Gallery</a>
+  <a href="#blessing-tv" onclick="closeMobileNav()" id="mNavTV">Blessing TV</a>
+  <a href="#contact" onclick="closeMobileNav()" id="mNavContact">Contact</a>
+  <a href="#donate" onclick="closeMobileNav()" id="mNavGive">Give</a>
+</div>
+
+<!-- HERO - FULL SCREEN IMAGE SLIDESHOW -->
+<section class="hero-slider" id="hero">
+  <div class="slides-container" id="slidesContainer">
+    <div class="slide active" style="background-image: url('images/A1.png');"></div>
+    <div class="slide" style="background-image: url('images/01.png');"></div>
+    <div class="slide" style="background-image: url('images/A9.png');"></div>
+    <div class="slide" style="background-image: url('images/A15.png');"></div>
+    <div class="slide" style="background-image: url('images/21.png');"></div>
+  </div>
+  <div class="hero-gradient-overlay"></div>
+  <div class="hero-content-center">
+    <div class="hero-badge animate-fade" id="heroBadge">🕊️ GOD'S BLESSING MAKES YOU PROSPER</div>
+    <h1 class="animate-up" id="heroTitle">The Blessing of God<br><span class="highlight">International Church</span></h1>
+    <p class="hero-tagline animate-up-delay" id="heroTagline">"Where Miracles Happen and Lives are Transformed"</p>
+    <div class="hero-cta animate-up-delay2">
+      <a href="#programs" class="btn btn-primary" id="heroBtn1">✨ Join Our Service</a>
+      <a href="https://www.youtube.com/channel/UC-0LNiVyLeG2faUGDiSNAVw/videos" target="_blank" class="btn btn-outline" id="heroBtn2">▶ Watch Online</a>
+    </div>
+  </div>
+  <!-- Slide dots -->
+  <div class="slide-dots" id="slideDots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+    <span class="dot" onclick="goToSlide(3)"></span>
+    <span class="dot" onclick="goToSlide(4)"></span>
+  </div>
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <div class="mouse"><div class="mouse-wheel"></div></div>
+    <p>Scroll</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section-navy" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" id="aboutLabel">About Us</span>
+      <h2 id="aboutTitle">Our Church, Our Family</h2>
+      <p id="aboutSub">A place where God's love transforms lives and miracles happen every day.</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-image reveal-left">
+        <img src="images/A16.png" alt="Church Community">
+        <div class="about-img-overlay">
+          <span>8th Anniversary</span>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <h3 id="aboutH3">Welcome to The Blessing of God International Church</h3>
+        <p id="aboutP1">We are a vibrant, Spirit-filled community of believers committed to worship, prayer, teaching, and experiencing the miraculous power of God. Our church is a place where lives are transformed, families are restored, and destinies are fulfilled through the Word of God.</p>
+        <p id="aboutP2">Under anointed leadership, we pursue spiritual growth, deep fellowship, and a closer walk with the Lord. Whether you're seeking healing, deliverance, or simply a place to call home — you belong here.</p>
+        <div class="about-features">
+          <div class="about-feature" id="feat1"><span class="icon">🙏</span> Anointed Worship</div>
+          <div class="about-feature" id="feat2"><span class="icon">📖</span> Biblical Teaching</div>
+          <div class="about-feature" id="feat3"><span class="icon">✨</span> Miracles & Healing</div>
+          <div class="about-feature" id="feat4"><span class="icon">❤️</span> Community Love</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS -->
+<section class="section section-gradient" id="programs">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" id="progLabel">Weekly Programs</span>
+      <h2 id="progTitle">Join Us in Worship</h2>
+      <p id="progSub">Experience the presence of God through our weekly services and programs.</p>
+    </div>
+    <div class="programs-grid">
+      <div class="program-card reveal">
+        <span class="emoji">🌅</span>
+        <div class="day" id="day1">Sunday</div>
+        <div class="time" id="time1">3:30 AM – 7:00 AM</div>
+        <p class="desc" id="desc1">Worship & Word — Start your week in the powerful presence of God with praise, worship, and the Word.</p>
+      </div>
+      <div class="program-card reveal">
+        <span class="emoji">📖</span>
+        <div class="day" id="day2">Tuesday</div>
+        <div class="time" id="time2">11:30 PM – 2:00 AM</div>
+        <p class="desc" id="desc2">Teaching & Prayer — Deep into the Word and intercession. A night of spiritual empowerment.</p>
+      </div>
+      <div class="program-card reveal">
+        <span class="emoji">🙏</span>
+        <div class="day" id="day3">Wednesday</div>
+        <div class="time" id="time3">3:00 AM – 10:00 AM</div>
+        <p class="desc" id="desc3">Counseling & Prayer — Personal ministry, spiritual counseling, and dedicated prayer time.</p>
+      </div>
+      <div class="program-card reveal">
+        <span class="emoji">⚡</span>
+        <div class="day" id="day4">Friday</div>
+        <div class="time" id="time4">Full Day</div>
+        <p class="desc" id="desc4">Miracle & Deliverance — A powerful day of miracles, signs, wonders, and divine deliverance.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section section-dark" id="gallery">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" id="galLabel">Moments of Faith</span>
+      <h2 id="galTitle">Our Ministry in Action</h2>
+      <p id="galSub">Glimpses into our worship, prayer, and community life.</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" onclick="openLightbox('images/01.png')">
+        <img src="images/01.png" alt="Pastor preaching">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/10.png')">
+        <img src="images/10.png" alt="Worship">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/12.png')">
+        <img src="images/12.png" alt="Ministry">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/21.png')">
+        <img src="images/21.png" alt="Community">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/23.png')">
+        <img src="images/23.png" alt="Prayer">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/4.png')">
+        <img src="images/4.png" alt="Service">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/A1.png')">
+        <img src="images/A1.png" alt="Worship">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/A9.png')">
+        <img src="images/A9.png" alt="Teaching">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/A15.png')">
+        <img src="images/A15.png" alt="Church Event">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/A16.png')">
+        <img src="images/A16.png" alt="Celebration">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/A20.png')">
+        <img src="images/A20.png" alt="Ministry">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('images/ban4 m.png')">
+        <img src="images/ban4 m.png" alt="Church Banner">
+        <div class="gallery-overlay"><span>View</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close">&times;</button>
+  <img id="lightboxImg" src="" alt="Gallery Image">
+</div>
+
+<!-- ADDRESS -->
+<section class="section section-navy" id="address">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" id="addrLabel">Find Us</span>
+      <h2 id="addrTitle">Our Location</h2>
+      <p id="addrSub">Visit us and experience the blessing in person.</p>
+    </div>
+    <div class="address-grid">
+      <div class="address-card reveal-left">
+        <h3>🇬🇧 English</h3>
+        <p id="addrEnText">📍 Addis Ababa, Bole Arabsa, near Water Tanker, Block 10, about 50 meters inside.</p>
+      </div>
+      <div class="address-card reveal-right">
+        <h3>🇪🇹 አማርኛ</h3>
+        <p id="addrAmText">📍 አድራሻ፦ አዲስ አበባ ቦሌ አራብሳ ውሃ ታንከር አርባ ስልሳ ብሎክ 10 ፊት ለፊት 50 ሜትር ገባ ብሎ ያገኙናል</p>
+      </div>
+      <div class="map-container reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.5!2d38.85!3d8.99!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOcKwMDAnMDAuMCJOIDM4wrA1MScwMC4wIkU!5e0!3m2!1sen!2set!4v1700000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLESSING TV -->
+<section class="section section-gradient" id="blessing-tv">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" id="tvLabel">📺 Blessing TV Channel</span>
+      <h2 id="tvTitle">Watch & Be Blessed</h2>
+      <p id="tvSub">Sermons, teachings, miracles, and live streams — anytime, anywhere.</p>
+    </div>
+    <div class="tv-content">
+      <div class="video-wrapper reveal-left">
+        <iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UC-0LNiVyLeG2faUGDiSNAVw" allowfullscreen></iframe>
+      </div>
+      <div class="tv-sidebar reveal-right">
+        <div class="tv-card">
+          <h4 id="tvC1">🎤 Live Sermons</h4>
+          <p id="tvP1">Watch powerful messages from our anointed pastor, live and on-demand.</p>
+        </div>
+        <div class="tv-card">
+          <h4 id="tvC2">✨ Miracle Testimonies</h4>
+          <p id="tvP2">See what God is doing — real testimonies of healing, deliverance, and breakthrough.</p>
+        </div>
+        <div class="tv-card">
+          <h4 id="tvC3">📖 Bible Teaching</h4>
+          <p id="tvP3">Deep, revelatory teaching from the Word of God for spiritual growth.</p>
+        </div>
+        <a href="https://www.youtube.com/channel/UC-0LNiVyLeG2faUGDiSNAVw?sub_confirmation=1" target="_blank" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:8px;" id="subBtn">🔔 Subscribe Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIES -->
+<section class="section section-dark" id="testimonies">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" id="tesLabel">Testimonies</span>
+      <h2 id="tesTitle">What God Has Done</h2>
+      <p id="tesSub">Hear from people whose lives have been transformed by God's power.</p>
+    </div>
+    <div class="testimonies-grid" id="testimoniesGrid">
+      <div class="testimony-card reveal">
+        <div class="quote">"</div>
+        <p>God healed me from a sickness I suffered for 5 years. All glory to God and the prayers of this church!</p>
+        <div class="author">— Sister Meron T.</div>
+      </div>
+      <div class="testimony-card reveal">
+        <div class="quote">"</div>
+        <p>Through the teaching and prayer at this church, my family was restored. We are blessed beyond measure!</p>
+        <div class="author">— Brother Dawit K.</div>
+      </div>
+      <div class="testimony-card reveal">
+        <div class="quote">"</div>
+        <p>I found my purpose and calling through the Word taught here. This church changed my life forever.</p>
+        <div class="author">— Sister Hanna M.</div>
+      </div>
+    </div>
+    <div class="testimony-form reveal">
+      <h3 style="color:var(--gold);text-align:center;margin-bottom:20px;font-family:'Playfair Display',serif;" id="tesFormTitle">Share Your Testimony</h3>
+      <form id="testimonyForm">
+        <div class="form-group">
+          <label for="testimonyName" id="tesNameLabel">Your Name</label>
+          <input type="text" id="testimonyName" placeholder="Enter your name" required>
+        </div>
+        <div class="form-group">
+          <label for="testimonyText" id="tesTextLabel">Your Testimony</label>
+          <textarea id="testimonyText" placeholder="Share what God has done in your life..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" id="tesSubmitBtn">🙏 Submit Testimony</button>
+        <div class="form-status" id="testimonyStatus"></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section section-navy" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" id="conLabel">Get In Touch</span>
+      <h2 id="conTitle">Contact Us</h2>
+      <p id="conSub">We'd love to hear from you. Reach out anytime.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal-left">
+        <div class="contact-info-card"><div class="icon">📞</div><div><h4 id="conP1">Phone</h4><p>0913 632 399</p></div></div>
+        <div class="contact-info-card"><div class="icon">📞</div><div><h4 id="conP2">Phone 2</h4><p>0912 132 722</p></div></div>
+        <div class="contact-info-card"><div class="icon">📍</div><div><h4 id="conP3">Location</h4><p>Addis Ababa, Bole Arabsa</p></div></div>
+        <div class="contact-info-card"><div class="icon">📧</div><div><h4 id="conP4">Email</h4><p>info@blessingchurch.org</p></div></div>
+      </div>
+      <div class="reveal-right">
+        <form id="contactForm">
+          <div class="form-group"><label for="contactName" id="conNameLabel">Full Name</label><input type="text" id="contactName" placeholder="Your full name" required></div>
+          <div class="form-group"><label for="contactEmail" id="conEmailLabel">Email Address</label><input type="email" id="contactEmail" placeholder="your@email.com" required></div>
+          <div class="form-group"><label for="contactMessage" id="conMsgLabel">Message</label><textarea id="contactMessage" placeholder="Write your message..." required></textarea></div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;" id="conBtn">✉️ Send Message</button>
+          <div class="form-status" id="contactStatus"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL MEDIA -->
+<section class="section section-gradient" id="social">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" id="socLabel">Follow Us</span>
+      <h2 id="socTitle">Stay Connected</h2>
+      <p id="socSub">Follow us on social media for daily inspiration and updates.</p>
+    </div>
+    <div class="social-icons reveal">
+      <a href="https://www.youtube.com/channel/UC-0LNiVyLeG2faUGDiSNAVw/videos" target="_blank" class="social-icon yt" title="YouTube">▶</a>
+      <a href="https://facebook.com/pastortito7" target="_blank" class="social-icon fb" title="Facebook">f</a>
+      <a href="https://t.me/bereket_tv" target="_blank" class="social-icon tg" title="Telegram">✈</a>
+      <a href="https://vm.tiktok.com/ZMFUtX14u/" target="_blank" class="social-icon tt" title="TikTok">♪</a>
+      <a href="https://www.instagram.com/pastortito_berekettv/" target="_blank" class="social-icon ig" title="Instagram">◉</a>
+    </div>
+  </div>
+</section>
+
+<!-- DONATION -->
+<section class="section section-dark" id="donate">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="label" id="donLabel">Support the Ministry</span>
+      <h2 id="donTitle">Give & Be Blessed</h2>
+      <p id="donSub">"Give, and it shall be given unto you." — Luke 6:38</p>
+    </div>
+    <div class="donation-grid">
+      <div class="donation-card reveal">
+        <div class="bank-icon">🏦</div>
+        <h3 id="donBank1">Awash Bank</h3>
+        <p class="acct-name" id="donName1">The Blessing of God International Church</p>
+        <div class="acct-number" id="awashAcct">01320660238600</div>
+        <button class="copy-btn" onclick="copyAccount('awashAcct')">📋 Copy Number</button>
+      </div>
+      <div class="donation-card reveal">
+        <div class="bank-icon">🏛️</div>
+        <h3 id="donBank2">Commercial Bank of Ethiopia</h3>
+        <p class="acct-name" id="donName2">Sisay Teshome</p>
+        <div class="acct-number" id="cbeAcct">1000094944458</div>
+        <button class="copy-btn" onclick="copyAccount('cbeAcct')">📋 Copy Number</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+          <img src="images/logo.jpg" alt="Logo" style="height:50px;width:50px;border-radius:50%;border:2px solid var(--gold);">
+          <span style="font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--white);">Blessing Church</span>
+        </div>
+        <p style="color:var(--gray-600);">A place where God's love transforms lives. Join us and experience the blessing.</p>
+      </div>
+      <div>
+        <h4 id="footLinks">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#programs">Programs</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#blessing-tv">Blessing TV</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 id="footConnect">Connect</h4>
+        <ul class="footer-links">
+          <li><a href="https://www.youtube.com/channel/UC-0LNiVyLeG2faUGDiSNAVw" target="_blank">YouTube</a></li>
+          <li><a href="https://facebook.com/pastortito7" target="_blank">Facebook</a></li>
+          <li><a href="https://t.me/bereket_tv" target="_blank">Telegram</a></li>
+          <li><a href="https://www.instagram.com/pastortito_berekettv/" target="_blank">Instagram</a></li>
+          <li><a href="https://vm.tiktok.com/ZMFUtX14u/" target="_blank">TikTok</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p id="footRights">&copy; 2024 The Blessing of God International Church. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

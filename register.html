@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register — Blessing Church</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="auth-page">
+  <div class="auth-card">
+    <h2>✝ Join Our Family</h2>
+    <p class="subtitle">Create your account</p>
+    <form id="registerForm">
+      <div class="form-group">
+        <label for="regName">Full Name</label>
+        <input type="text" id="regName" placeholder="Your full name" required>
+      </div>
+      <div class="form-group">
+        <label for="regEmail">Email</label>
+        <input type="email" id="regEmail" placeholder="your@email.com" required>
+      </div>
+      <div class="form-group">
+        <label for="regPassword">Password</label>
+        <input type="password" id="regPassword" placeholder="Create a password" minlength="6" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Register</button>
+      <div class="form-status" id="registerStatus"></div>
+    </form>
+    <p class="auth-link">Already have an account? <a href="/login">Login</a></p>
+    <p class="auth-link" style="margin-top:12px"><a href="/">← Back to Home</a></p>
+  </div>
+</div>
+<script>
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const status = document.getElementById('registerStatus');
+  try {
+    const res = await fetch('/api/auth/register', {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name: document.getElementById('regName').value, email: document.getElementById('regEmail').value, password: document.getElementById('regPassword').value })
+    });
+    const json = await res.json();
+    if (json.success) {
+      localStorage.setItem('token', json.token);
+      localStorage.setItem('user', JSON.stringify(json.user));
+      status.className = 'form-status success'; status.textContent = '✅ Registered! Redirecting...';
+      setTimeout(() => window.location.href = '/', 1000);
+    } else { status.className = 'form-status error'; status.textContent = '❌ ' + json.error; }
+  } catch { status.className = 'form-status error'; status.textContent = '❌ Connection error.'; }
+});
+</script>
+</body>
+</html>

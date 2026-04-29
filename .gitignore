@@ -1,0 +1,11 @@
+node_modules/
+church.db
+.env
+pinggy_out.txt
+pinggy_err.txt
+serveo_out.txt
+serveo_err.txt
+localhostrun_out.txt
+localhostrun_err.txt
+untun_out.txt
+.DS_Store
